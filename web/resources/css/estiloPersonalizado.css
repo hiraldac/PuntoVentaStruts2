@@ -1,0 +1,21 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 1, 2018, 12:08:21 PM
+    Author     : Rolando Pedro
+*/
+
+.section {
+	background-color: #eee !important;
+	border-bottom: solid 1px #ccc !important;
+	height: 100%;
+}
+.margenes-ventana-principal {
+	height:calc(100% - 40px) !important;
+	margin: 0px !important;
+	padding: 0px !important;
+	min-width: 1024px !important;
+}
