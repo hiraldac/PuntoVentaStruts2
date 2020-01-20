@@ -7,11 +7,8 @@
 package model;
 
 import entity.Detalle;
-import entity.Producto;
 import entity.Venta;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.HibernateException;
@@ -107,30 +104,4 @@ public class VentaModel implements IVentaModel{
         return lista;
     }
     
-//    public static void main(String[] args) {
-//        VentaModel vm=new VentaModel();
-//        Venta venta=new Venta();
-//        
-//        ProductoModel p=new ProductoModel();
-//        Producto p1= p.ObtenerProducto("1234");
-//        Producto p2= p.ObtenerProducto("1452");
-//        
-//        Detalle detalle=new Detalle();
-//        Detalle detalle2=new Detalle();
-//        
-//        detalle.setProducto(p1);
-//        detalle.setCantidad(2);
-//        detalle.setVenta(venta);
-//        
-//        detalle2.setProducto(p2);
-//        detalle2.setCantidad(1);
-//        detalle2.setVenta(venta);
-//        
-//        venta.setHora(new Date());
-//        venta.setTotal(detalle.getProducto().getPrecio());
-//        venta.addDetalle(detalle);
-//        venta.addDetalle(detalle2);
-//        
-//        vm.CrearVenta(venta);
-//    }
 }
