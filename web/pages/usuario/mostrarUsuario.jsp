@@ -1,3 +1,11 @@
+<%--
+    * Autor:  Pedro Eliezer García Ramírez
+    * Email: pedro.e.garcia.ramirez@gmail.com
+    * Creación: 17/01/2020
+
+--%>
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
