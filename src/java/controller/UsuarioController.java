@@ -129,7 +129,6 @@ public class UsuarioController extends ActionSupport {
             for (Usuario u : lista) {
                 if(this.username.equals(u.getNombre())&& this.password.equals(u.getContrasena())){
                     listaRegistros = (ArrayList<Usuario>) service.ObtenerRegistros();
-                    System.out.println("SIIIIIIIIII");
                     return SUCCESS;
                 }else{
                     return ERROR;                

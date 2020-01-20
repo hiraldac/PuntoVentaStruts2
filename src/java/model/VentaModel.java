@@ -2,6 +2,7 @@
  * Autor:  hiralda
  * Email: castroc.hiralda@gmail.com
  * Creación: 26/11/2019
+ * Modificación: 20/01/2019
  *
  */
 package model;

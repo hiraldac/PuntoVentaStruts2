@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/labtw03/NetBeansProjects/PuntoVentaStruts2/src/java/entity/Detalle.hbm.xml</file>
+            <file>file:/home/labtw03/NetBeansProjects/PuntoVentaStruts2/src/java/model/IVentaModel.java</file>
             <file>file:/home/labtw03/NetBeansProjects/PuntoVentaStruts2/src/java/resources/bd/venta.sql</file>
             <file>file:/home/labtw03/NetBeansProjects/PuntoVentaStruts2/src/java/model/VentaModel.java</file>
-            <file>file:/home/labtw03/NetBeansProjects/PuntoVentaStruts2/src/java/hibernate.cfg.xml</file>
-            <file>file:/home/labtw03/NetBeansProjects/PuntoVentaStruts2/web/pages/venta/crearVenta.jsp</file>
-            <file>file:/home/labtw03/NetBeansProjects/PuntoVentaStruts2/src/java/entity/Venta.java</file>
-            <file>file:/home/labtw03/NetBeansProjects/PuntoVentaStruts2/src/java/struts.xml</file>
-            <file>file:/home/labtw03/NetBeansProjects/PuntoVentaStruts2/src/java/hibernate.reveng.xml</file>
+            <file>file:/home/labtw03/NetBeansProjects/PuntoVentaStruts2/src/java/controller/UsuarioController.java</file>
         </group>
     </open-files>
 </project-private>
