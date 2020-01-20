@@ -65,7 +65,7 @@ public class ProductoModel implements IProductoModel{
     }
 
     @Override
-    public Producto ObtenerProducto(int idproducto) {
+    public Producto ObtenerProducto(String idproducto) {
         Producto producto = null;
         try {
             sessionFactory = new Configuration().configure().buildSessionFactory();

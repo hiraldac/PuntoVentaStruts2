@@ -1,5 +1,5 @@
 package entity;
-// Generated 17/01/2020 03:57:17 PM by Hibernate Tools 4.3.1
+// Generated 17/01/2020 01:21:39 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -16,24 +16,21 @@ public class Venta  implements java.io.Serializable {
      private long idventa;
      private Date hora;
      private BigDecimal total;
-     private long usuarioid;
      private Set detalles = new HashSet(0);
 
     public Venta() {
     }
 
 	
-    public Venta(long idventa, Date hora, BigDecimal total, long usuarioid) {
+    public Venta(long idventa, Date hora, BigDecimal total) {
         this.idventa = idventa;
         this.hora = hora;
         this.total = total;
-        this.usuarioid = usuarioid;
     }
-    public Venta(long idventa, Date hora, BigDecimal total, long usuarioid, Set detalles) {
+    public Venta(long idventa, Date hora, BigDecimal total, Set detalles) {
        this.idventa = idventa;
        this.hora = hora;
        this.total = total;
-       this.usuarioid = usuarioid;
        this.detalles = detalles;
     }
    
@@ -58,13 +55,6 @@ public class Venta  implements java.io.Serializable {
     public void setTotal(BigDecimal total) {
         this.total = total;
     }
-    public long getUsuarioid() {
-        return this.usuarioid;
-    }
-    
-    public void setUsuarioid(long usuarioid) {
-        this.usuarioid = usuarioid;
-    }
     public Set getDetalles() {
         return this.detalles;
     }
@@ -73,7 +63,9 @@ public class Venta  implements java.io.Serializable {
         this.detalles = detalles;
     }
 
-
+    public void addDetalle(Detalle detalle) {
+        this.detalles.add(detalle);
+    }
 
 
 }

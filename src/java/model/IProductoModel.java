@@ -13,6 +13,6 @@ public interface IProductoModel {
     public void CrearProducto(Producto producto);
     public void ActualizarProducto(Producto producto);
     public void EliminarProducto(Producto producto);
-    public Producto ObtenerProducto(int idproducto);
+    public Producto ObtenerProducto(String idproducto);
     public List<Producto> ObtenerProductos();
 }

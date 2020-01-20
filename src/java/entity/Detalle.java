@@ -1,5 +1,5 @@
 package entity;
-// Generated 17/01/2020 03:57:17 PM by Hibernate Tools 4.3.1
+// Generated 17/01/2020 01:21:39 PM by Hibernate Tools 4.3.1
 
 
 
@@ -9,25 +9,27 @@ package entity;
 public class Detalle  implements java.io.Serializable {
 
 
-     private DetalleId id;
+     private long iddetalle;
      private Producto producto;
      private Venta venta;
+     private int cantidad;
 
     public Detalle() {
     }
 
-    public Detalle(DetalleId id, Producto producto, Venta venta) {
-       this.id = id;
+    public Detalle(long iddetalle, Producto producto, Venta venta, int cantidad) {
+       this.iddetalle = iddetalle;
        this.producto = producto;
        this.venta = venta;
+       this.cantidad = cantidad;
     }
    
-    public DetalleId getId() {
-        return this.id;
+    public long getIddetalle() {
+        return this.iddetalle;
     }
     
-    public void setId(DetalleId id) {
-        this.id = id;
+    public void setIddetalle(long iddetalle) {
+        this.iddetalle = iddetalle;
     }
     public Producto getProducto() {
         return this.producto;
@@ -43,9 +45,13 @@ public class Detalle  implements java.io.Serializable {
     public void setVenta(Venta venta) {
         this.venta = venta;
     }
-
-
-
+    public int getCantidad() {
+        return this.cantidad;
+    }
+    
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
 
 }
 
