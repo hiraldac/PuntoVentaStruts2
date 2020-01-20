@@ -18,7 +18,7 @@ import service.UsuarioService;
 
 /**
  *
- * @author labtw03
+ * @author PEDRO
  */
 public class UsuarioController extends ActionSupport {
 
