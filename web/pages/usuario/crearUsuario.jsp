@@ -6,6 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CREACION DE USUARIOS</title>
         <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../resources/css/miestilo.css">
         <script type="text/javascript" src="../../resources/js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="../../resources/js/bootstrap.min.js"></script>
     </head>
@@ -13,15 +14,25 @@
         <div class="page-header">
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <s:a class="navbar-brand" href="#">Usuarios</s:a>
-                        </li>
-                        <li class="nav-item active">
+                    <li class="nav-item">                        
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Menu
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <s:a class="dropdown-item" href="#">Usuarios</s:a>
+                                <s:a class="dropdown-item" href="#">Productos</s:a>
+                                <s:a class="dropdown-item" href="#">Ventas</s:a>
+                                <s:a class="dropdown-item" href="#">Provedores</s:a>
+                            </div>
+                        </div>
+                   </li>
+                   <li class="nav-item active">
                         <s:a href="actionCrearUsuario">
                             <span class="nav-link">Crear</span>
                         </s:a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <s:a href="actionMostarUsuario">
                             <span class="nav-link">Mostrar</span>
                         </s:a>

@@ -13,7 +13,7 @@ import java.util.List;
 public interface IVentaService{
     public void CrearVenta(Venta venta);
     public void ActualizarVenta(Venta venta);
-    public void EliminarVEnta(Venta venta);
+    public void EliminarVenta(long idventa);
     public Venta ObtenerRegistro(long idventa);
     public List<Venta> ObtenerRegistros();
 }

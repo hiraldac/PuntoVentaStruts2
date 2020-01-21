@@ -1,0 +1,43 @@
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: labtw04 -->
+ 
+<struts>
+    <package name="venta" namespace="/pages/venta" extends="struts-default">     
+        <action name="actionCrearVenta" 
+                class="controller.VentaController">
+            <result>/pages/usuario/crearVenta.jsp</result>
+        </action>
+        
+        <action name="actionAgregarCarrito" 
+                class="controller.VentaController"
+                method="agregarCarrito">
+            <result name="error">/pages/usuario/error.jsp</result>
+            <result name="success">/pages/usuario/crearVenta.jsp</result>
+        </action>
+        
+        <action name="actionTerminarVenta"
+                class="controller.VentaController"
+                method="obtenerRegistros">
+            <result name="success">/pages/usuario/mostrarVenta.jsp</result>
+            <result name="error">/pages/usuario/errorUsuario.jsp</result>
+        </action>
+        
+        <action name="actionMostrarVentas"
+                class="controller.VentaController"
+                method="obtenerRegistros">
+            <result name="success">/pages/usuario/mostrarVentas.jsp</result>
+        </action>
+        
+        <action name="actionMostrarVenta"
+                class="controller.VentaController"
+                method="obtenerRegistro">
+            <result name="success">/pages/usuario/mostrarVenta.jsp</result>
+        </action>
+        
+
+    </package>
+</struts>

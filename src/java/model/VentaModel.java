@@ -54,13 +54,14 @@ public class VentaModel implements IVentaModel{
     }
 
     @Override
-    public void EliminarVEnta(Venta venta) {
+    public void EliminarVenta(long idventa) {
         try {
             sessionFactory = new Configuration().configure().buildSessionFactory();
             session = sessionFactory.openSession();
             session.beginTransaction();
-            session.delete(venta);
-            venta.getDetalles().forEach((detalle) -> {session.delete(detalle);});
+            Venta eliminar=ObtenerRegistro(idventa);
+            eliminar.getDetalles().forEach((detalle) -> {session.delete(detalle);});
+            session.delete(eliminar);
             session.getTransaction().commit();
             session.close();
             sessionFactory.close();

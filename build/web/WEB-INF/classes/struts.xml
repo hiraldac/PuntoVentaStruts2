@@ -5,4 +5,5 @@
 <struts>
         <include file="usuario.xml"></include>
         <include file="logueo.xml"></include>
+        <include file="venta.xml"></include>       
 </struts>

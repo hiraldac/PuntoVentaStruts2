@@ -76,7 +76,7 @@ INSERT INTO public.usuario(
 	VALUES ('Eber', 'usuario', 'emm123', 'Eb3r');
 
 INSERT INTO public.venta(
-	idventa, hora, total)
+	idventa, fecha, total)
 	VALUES (1, NOW() ,30.5 );
 	
 INSERT INTO public.detalle(
@@ -88,7 +88,7 @@ INSERT INTO public.detalle(
 	VALUES (1, 1, '1452');
 
 INSERT INTO public.venta(
-	idventa, hora, total)
+	idventa, fecha, total)
 	VALUES (2, NOW() ,42 );
 	
 INSERT INTO public.detalle(

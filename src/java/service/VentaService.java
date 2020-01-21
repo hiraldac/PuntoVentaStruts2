@@ -8,34 +8,39 @@ package service;
 
 import entity.Venta;
 import java.util.List;
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
+import model.IVentaModel;
+import model.VentaModel;
 
-
+@ManagedBean(name = "ventaService")
+@ApplicationScoped
 public class VentaService implements IVentaService{
-    IVentaService ivs =new VentaService();
+     IVentaModel ivm =new VentaModel() ;
 
     @Override
     public void CrearVenta(Venta venta) {
-        ivs.CrearVenta(venta);
+        ivm.CrearVenta(venta);
     }
 
     @Override
     public void ActualizarVenta(Venta venta) {
-        ivs.ActualizarVenta(venta);
+        ivm.ActualizarVenta(venta);
     }
 
     @Override
-    public void EliminarVEnta(Venta venta) {
-        ivs.EliminarVEnta(venta);
+    public void EliminarVenta(long idventa) {
+        ivm.EliminarVenta(idventa);
     }
 
     @Override
     public Venta ObtenerRegistro(long idventa) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return ivm.ObtenerRegistro(idventa);
     }
 
     @Override
     public List<Venta> ObtenerRegistros() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return ivm.ObtenerRegistros();
     }
     
 }

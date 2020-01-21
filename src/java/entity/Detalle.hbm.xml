@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 17/01/2020 01:21:39 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 21/01/2020 03:40:04 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="entity.Detalle" table="detalle" schema="public" optimistic-lock="version">
         <id name="iddetalle" type="long">
             <column name="iddetalle" />
-            <generator class="identity" />
+            <generator class="assigned" />
         </id>
         <many-to-one name="producto" class="entity.Producto" fetch="select">
             <column name="productoid" not-null="true" />
