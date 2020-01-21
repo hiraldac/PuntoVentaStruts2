@@ -13,23 +13,50 @@
         <div class="page-header">
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <s:a class="navbar-brand" href="#">Usuarios</s:a>
-                        </li>
-                        <li class="nav-item active">
-                        <s:a href="actionCrearUsuario">
-                            <span class="nav-link">Crear</span>
-                        </s:a>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuarios <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="actionCrearUsuario">Crear usuarios</a></li>
+                            <li><a href="actionMostarUsuario">Mostrar usuarios</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item active">
-                        <s:a href="actionMostarUsuario">
-                            <span class="nav-link">Mostrar</span>
-                        </s:a>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Provedores <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="actionCrearUsuario">Crear proveedor</a></li>
+                            <li><a href="actionMostarUsuario">Mostrar proveedor</a></li>
+                        </ul>
                     </li>
-
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="actionCrearUsuario">Crear Producto</a></li>
+                            <li><a href="actionMostarUsuario">Mostrar Producto</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ventas<span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="actionMostarUsuario">Mostrar ventas</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Generar reporte<span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="actionCrearUsuario">Reporte semanal</a></li>
+                            <li><a href="actionMostarUsuario">Reporte mensual</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
+
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">

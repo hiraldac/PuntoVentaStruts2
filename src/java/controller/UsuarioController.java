@@ -127,9 +127,8 @@ public class UsuarioController extends ActionSupport {
             session = sessionFactory.openSession();
             lista = (ArrayList<Usuario>) session.createQuery("FROM Usuario").list();
             for (Usuario u : lista) {
-                if(this.username.equals(u.getNombre())&& this.password.equals(u.getContrasena())){
+                if(username.equals(u.getNombre())&& password.equals(u.getContrasena())){
                     listaRegistros = (ArrayList<Usuario>) service.ObtenerRegistros();
-                    System.out.println("SIIIIIIIIII");
                     return SUCCESS;
                 }else{
                     return ERROR;                
