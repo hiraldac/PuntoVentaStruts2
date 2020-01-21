@@ -1,0 +1,52 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: labtw04 -->
+ 
+<struts>
+    <package name="login" namespace="/pages/login" extends="struts-default">
+        <action name="actionlogueo"
+                class="controller.UsuarioController"
+                method="authenticate">
+            <result name="success">/pages/usuario/mostrarUsuario.jsp</result>
+            <result name="error">/pages/login/index.jsp</result>
+        </action>
+        <action name="actionCrearUsuario" 
+                        class="controller.UsuarioController">
+            <result>/pages/usuario/crearUsuario.jsp</result>
+        </action>
+        
+        <action name="actionInsertUsuario" 
+                class="controller.UsuarioController"
+                method="crearRegistro">
+            <result name="error">/pages/usuario/crearUsuario.jsp</result>
+            <result name="success">/pages/usuario/mostrarUsuario.jsp</result>
+        </action>
+        
+        <action name="actionMostarUsuario"
+                class="controller.UsuarioController"
+                method="obtenerRegistros">
+            <result name="success">/pages/usuario/mostrarUsuario.jsp</result>
+            <result name="error">/pages/usuario/errorUsuario.jsp</result>
+        </action>
+        
+        <action name="actionEliminarUsuario"
+                class="controller.UsuarioController"
+                method="eliminarRegistros" >
+            <result name="success">/pages/usuario/mostrarUsuario.jsp</result>
+            <result name="error">/pages/usuario/mostrarUsuario.jsp</result>
+        </action>
+        <action name="actionActualizarUsuario" 
+                class="controller.UsuarioController">
+            <result name="success">/pages/usuario/editarUsuario.jsp</result>
+        </action>
+        
+        <action name="editar" 
+                class="controller.UsuarioController"
+                method="actualizarRegistro">
+            <result name="error">/pages/usuario/errorUsuario.jsp</result>
+            <result name="success">/pages/usuario/mostrarUsuario.jsp</result>
+        </action>
+    </package>
+</struts>

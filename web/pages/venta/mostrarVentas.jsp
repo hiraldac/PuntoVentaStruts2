@@ -49,35 +49,25 @@
                         <thead>
                             <tr>
                                 <th>Código</th>
-                                <th>Nombre</th>
-                                <th>Marca</th>
-                                <th>Descripción</th>
-                                <th>Precio</th>
-                                <th>Existencia</th>
+                                <th>Fecha</th>
+                                <th>Total</th>
                             </tr> 
                         </thead>
                         
                         <tbody>
-                            <s:iterator value="listaRegistros" var="registros" status="producto">
+                            <s:iterator value="listaRegistros" var="registros" status="venta">
                                 <tr>
-                                    <td> <s:property value="idproducto"></s:property> </td>
-                                    <td> <s:property value="nombre"></s:property> </td>
-                                    <td> <s:property value="marca"></s:property> </td>
-                                    <td> <s:property value="descripcion"></s:property> </td>
-                                    <td> <s:property value="precio"></s:property> </td>
-                                    <td> <s:property value="existencia"></s:property> </td>
+                                    <td> <s:property value="idventa"></s:property> </td>
+                                    <td> <s:property value="fecha"></s:property> </td>
+                                    <td> <s:property value="total"></s:property> </td>
                                     <td>
-                                    <s:a action="actionActualizarProducto">
-                                        <s:param name="producto.idproducto" value="idproducto"></s:param>
-                                        <s:param name="producto.nombre" value="nombre"></s:param>
-                                        <s:param name="producto.marca" value="marca"></s:param>
-                                        <s:param name="producto.descripcion" value="descripcion"></s:param>
-                                        <s:param name="producto.existencia" value="existencia"></s:param>
-                                        <span class="btn bg-info">Editar</span>
-                                    </s:a>
-                                    <s:a action="actionDeleteProducto">
-                                        <s:param name="producto.idproducto" value="idproducto"></s:param>
+                                    <s:a action="actionDeleteVenta">
+                                        <s:param name="venta.idventa" value="idventa"></s:param>
                                         <span class="btn bg-danger">Eliminar</span>
+                                    </s:a>
+                                    <s:a action="actionMostrarVenta">
+                                        <s:param name="venta.idventa" value="idventa"></s:param>
+                                        <span class="btn">Mostrar</span>
                                     </s:a>
                                     </td>
                                 </tr>

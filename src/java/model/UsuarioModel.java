@@ -1,35 +1,32 @@
 /* 
- * Autor:  hiralda
- * Email: castroc.hiralda@gmail.com
+ * Autor:  Pedro Eliezer García Ramírez
+ * Email: pedro.e.garcia.ramirez@gmail.com
  * Creación: 26/11/2019
- * Modificación: 20/01/2019
  *
  */
 package model;
 
-import entity.Detalle;
-import entity.Venta;
+import entity.Usuario;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class VentaModel implements IVentaModel{
+public class UsuarioModel implements IUsuarioModel {
 
     private SessionFactory sessionFactory;
     private Session session;
-    
+
     @Override
-    public void CrearVenta(Venta venta) {
+    public void CrearUsuario(Usuario usuario) {
         try {
             sessionFactory = new Configuration().configure().buildSessionFactory();
             session = sessionFactory.openSession();
             session.beginTransaction();
-            session.save(venta);
-            venta.getDetalles().forEach((detalle) -> {session.save(detalle);});
+            session.save(usuario);
             session.getTransaction().commit();
             session.close();
             sessionFactory.close();
@@ -39,12 +36,12 @@ public class VentaModel implements IVentaModel{
     }
 
     @Override
-    public void ActualizarVenta(Venta venta) {
+    public void ActualizarUsuario(Usuario usuario) {
         try {
             sessionFactory = new Configuration().configure().buildSessionFactory();
             session = sessionFactory.openSession();
             session.beginTransaction();
-            session.update(venta);
+            session.update(usuario);
             session.getTransaction().commit();
             session.close();
             sessionFactory.close();
@@ -54,14 +51,12 @@ public class VentaModel implements IVentaModel{
     }
 
     @Override
-    public void EliminarVenta(long idventa) {
+    public void EliminarRegistro(Usuario usuario) {
         try {
             sessionFactory = new Configuration().configure().buildSessionFactory();
             session = sessionFactory.openSession();
             session.beginTransaction();
-            Venta eliminar=ObtenerRegistro(idventa);
-            eliminar.getDetalles().forEach((detalle) -> {session.delete(detalle);});
-            session.delete(eliminar);
+            session.delete(usuario);
             session.getTransaction().commit();
             session.close();
             sessionFactory.close();
@@ -71,32 +66,30 @@ public class VentaModel implements IVentaModel{
     }
 
     @Override
-    public Venta ObtenerRegistro(long idventa) {
-        Venta venta = null;
-        
+    public Usuario ObtenerRegistro(long idusuario) {
+
+        Usuario usuario = null;
         try {
             sessionFactory = new Configuration().configure().buildSessionFactory();
             session = sessionFactory.openSession();
-            venta = (Venta) session.get(Venta.class, idventa);
-            venta.setDetalles((Set) session.get(Detalle.class, venta.getIdventa()));            
+            usuario = (Usuario) session.get(Usuario.class, idusuario);
             session.close();
             sessionFactory.close();
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
         }
-        return venta;
+        return usuario;
     }
 
     @Override
-    public List<Venta> ObtenerRegistros() {
-        ArrayList<Venta> lista = null;
+    public List<Usuario> ObtenerRegistros() {
+        ArrayList<Usuario> lista = null;
         try {
             sessionFactory = new Configuration().configure().buildSessionFactory();
             session = sessionFactory.openSession();
-            lista = (ArrayList<Venta>) session.createQuery("FROM venta").list();
-            for (Venta u : lista) {
-                System.out.println("Detalle: " + u.getIdventa());
-                u.setDetalles((Set) session.get(Detalle.class, u.getIdventa()));
+            lista = (ArrayList<Usuario>) session.createQuery("FROM Usuario").list();
+            for (Usuario u : lista) {
+
             }
             session.close();
             sessionFactory.close();
@@ -105,5 +98,6 @@ public class VentaModel implements IVentaModel{
         }
         return lista;
     }
-    
+    //Usuario us = new Usuario(0, nombre, tipo, contrasena, usuario);
+
 }
