@@ -7,7 +7,10 @@ package controller;
 
 import static com.opensymphony.xwork2.Action.ERROR;
 import static com.opensymphony.xwork2.Action.SUCCESS;
+import com.opensymphony.xwork2.ActionSupport;
+import entity.Detalle;
 import entity.Venta;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import service.IVentaService;
 import service.VentaService;
@@ -16,11 +19,13 @@ import service.VentaService;
  *
  * @author labtw03
  */
-public class VentaController {
-    IVentaService service = new VentaService();
+public class VentaController extends ActionSupport {
+    private IVentaService service = new VentaService();
     private ArrayList<Venta> listaRegistros;
-    Venta venta;
-    
+    private Venta venta;
+    private long idventa;
+    private BigDecimal totalventa;
+    private ArrayList<Detalle> listaDetalle;
 
     public String crearRegistro() throws Exception {
         try {
@@ -43,7 +48,7 @@ public class VentaController {
         }
     }
 
-    public String eliminarRegistros() throws Exception {
+    public String eliminarRegistro() throws Exception {
         try {
             service.EliminarVenta(venta.getIdventa());
             listaRegistros = (ArrayList<Venta>) service.ObtenerRegistros();
@@ -54,17 +59,18 @@ public class VentaController {
         }
     }
     
-    public String mostrarRegistro() throws Exception {
+    public String obtenerRegistro() throws Exception {
         try {
-            service.ActualizarVenta(venta);
-            listaRegistros = (ArrayList<Venta>) service.ObtenerRegistros();
+            venta = service.ObtenerRegistro(idventa);
+            venta.getDetalles().forEach((detalle) -> {listaDetalle.add((Detalle)detalle);} );
+            setTotalventa();
             return SUCCESS;
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return ERROR;
         }
     }
-
+    
     public ArrayList<Venta> getListaRegistros() {
         return listaRegistros;
     }
@@ -73,15 +79,43 @@ public class VentaController {
         this.listaRegistros = listaRegistros;
     }
 
-    public Venta getUsuario() {
+    public Venta getVenta() {
         return venta;
     }
 
-    public void setUsuario(Venta venta) {
+    public void setVenta(Venta venta) {
         this.venta = venta;
     }
+
+    public long getIdventa() {
+        return idventa;
+    }
+
+    public void setIdventa(long idventa) {
+        this.idventa = idventa;
+    }
+
+    public BigDecimal getTotalventa() {
+        return totalventa;
+    }
+
+    public void setTotalventa() {
+        this.totalventa=new BigDecimal(0);
+        this.listaDetalle.forEach((detalle) -> {
+            totalventa.add(
+                (detalle).getProducto().getPrecio().multiply(
+                        (new BigDecimal((detalle).getCantidad()))))
+                ;} );
+    }
+
     
-    public void agregarCarrito(Venta venta) {
-        this.venta = venta;
+    public void agregarCarrito(Detalle detalle) {
+        detalle.setVenta(venta);
+    }
+ 
+    public static void main(String[] args) throws Exception {
+        VentaController vc = new VentaController();
+        vc.idventa=1;
+        vc.obtenerRegistro();
     }
 }

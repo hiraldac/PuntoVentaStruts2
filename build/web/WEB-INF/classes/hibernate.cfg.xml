@@ -49,8 +49,8 @@ Contributor(s):
     <property name="hibernate.hbm2ddl.auto">update</property>
     <property name="hibernate.show_sql">true</property>
     <mapping resource="entity/Producto.hbm.xml"/>
+    <mapping resource="entity/Venta.hbm.xml"/>
     <mapping resource="entity/Detalle.hbm.xml"/>
     <mapping resource="entity/Usuario.hbm.xml"/>
-    <mapping resource="entity/Venta.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
