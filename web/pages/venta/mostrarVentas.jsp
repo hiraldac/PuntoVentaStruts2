@@ -10,10 +10,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
-        <script type="text/javascript" href="./resources/js/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" href="./resources/js/bootstrap.min.js"></script>
+        <title>Ventas</title>
+        <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+        <script type="text/javascript" src="../../resources/js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../../resources/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../../resources/css/miestilo.css">
     </head>
     <body>
         <div class="page-header">
@@ -23,19 +24,15 @@
                         <a class="navbar-brand" href="#">Frameworks</a>
                     </li>
                     <li class="nav-item">
-                    <s:a href="actionCrearFramework">
-                        <span class="nav-link">Crear</span>
-                    </s:a>
+
                     </li>
                     <li class="nav-item">
-                    <s:a href="actionMostrarFramework">
-                        <span class="nav-link">Mostrar</span>
-                    </s:a>
+                        <s:a href="actionMostrarVentas">
+                            <span class="nav-link">Mostrar</span>
+                        </s:a>
                     </li>
                     <li class="nav-item">
-                    <s:a href="actionAyudaFramework">
-                        <span class="nav-link">Ayuda</span>
-                    </s:a>
+
                     </li>
                 </ul>
             </nav>
@@ -55,19 +52,19 @@
                         </thead>
                         
                         <tbody>
-                            <s:iterator value="listaRegistros" var="registros" status="venta">
+                            <s:iterator value="listaRegistros" var="registros" status="struts">
                                 <tr>
                                     <td> <s:property value="idventa"></s:property> </td>
                                     <td> <s:property value="fecha"></s:property> </td>
                                     <td> <s:property value="total"></s:property> </td>
                                     <td>
                                     <s:a action="actionDeleteVenta">
-                                        <s:param name="venta.idventa" value="idventa"></s:param>
-                                        <span class="btn bg-danger">Eliminar</span>
+                                        <s:param name="idventa" value="idventa"></s:param>
+                                        <span class="btn btn-danger">Eliminar</span>
                                     </s:a>
                                     <s:a action="actionMostrarVenta">
-                                        <s:param name="venta.idventa" value="idventa"></s:param>
-                                        <span class="btn">Mostrar</span>
+                                        <s:param name="idventa" value="idventa"></s:param>
+                                        <span class="btn btn-primary">Mostrar</span>
                                     </s:a>
                                     </td>
                                 </tr>

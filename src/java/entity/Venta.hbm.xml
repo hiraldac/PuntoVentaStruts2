@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 21/01/2020 03:40:04 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 23/01/2020 05:14:45 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="entity.Venta" table="venta" schema="public" optimistic-lock="version">
         <id name="idventa" type="long">

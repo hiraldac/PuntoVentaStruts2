@@ -10,8 +10,8 @@ package model;
 import entity.Detalle;
 import entity.Venta;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -73,12 +73,12 @@ public class VentaModel implements IVentaModel{
     @Override
     public Venta ObtenerRegistro(long idventa) {
         Venta venta = null;
-        
         try {
             sessionFactory = new Configuration().configure().buildSessionFactory();
             session = sessionFactory.openSession();
             venta = (Venta) session.get(Venta.class, idventa);
-            venta.setDetalles((Set) session.get(Detalle.class, venta.getIdventa()));            
+            String hql = "from Detalle where ventaid="+venta.getIdventa();
+            venta.setDetalles(new HashSet(session.createQuery(hql).list()));
             session.close();
             sessionFactory.close();
         } catch (HibernateException e) {
@@ -93,11 +93,7 @@ public class VentaModel implements IVentaModel{
         try {
             sessionFactory = new Configuration().configure().buildSessionFactory();
             session = sessionFactory.openSession();
-            lista = (ArrayList<Venta>) session.createQuery("FROM venta").list();
-            for (Venta u : lista) {
-                System.out.println("Detalle: " + u.getIdventa());
-                u.setDetalles((Set) session.get(Detalle.class, u.getIdventa()));
-            }
+            lista = (ArrayList<Venta>) session.createQuery("FROM Venta").list();
             session.close();
             sessionFactory.close();
         } catch (HibernateException e) {
@@ -105,5 +101,5 @@ public class VentaModel implements IVentaModel{
         }
         return lista;
     }
-    
+
 }
